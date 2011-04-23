@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/ken/projects/snackb0t/src'
+let g:netrw_dirhist_2='/home/ken/projects/snackb0t/src/modules'
+let g:netrw_dirhist_3='/home/ken/projects/snackb0t/src'
+let g:netrw_dirhist_4='/home/ken/projects/snackb0t/src/irc'
+let g:netrw_dirhist_5='/home/ken/projects/boneking/src'
+let g:netrw_dirhist_6='/usr/portage/www-plugins/adobe-flash'
+let g:netrw_dirhist_7='/etc/conky'
+let g:netrw_dirhist_8='/home/ken/.config'

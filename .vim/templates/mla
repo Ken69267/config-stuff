@@ -1,0 +1,16 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{mla}
+\begin{document}
+\begin{mla}{Kenneth}{Prugh}{Professor's last name}{Class name}{\today}{Title}
+
+intro paragraph
+
+% \begin{workscited}
+% \bibent
+% author's last name, first name.  ``Paper Title."  \textit{Book Title}.
+% Date of publication
+
+% \end{workscited}
+\end{mla}
+\end{document}
+
