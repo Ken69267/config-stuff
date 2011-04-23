@@ -1,0 +1,50 @@
+xterm*savelines: 10000
+xterm*background:black
+#xterm*foreground:cyan
+#xterm*foreground:\#355B93
+#xterm*foreground:\#96B0EA
+xterm*foreground:\#7199D6
+xterm*boldFont:-misc-fixed-medium-*-*-*-*-140-*-*-*-*-iso8859-*
+#unicode rvxt terminal configuration lines
+Xft*hintstyle: hintfull
+Xft*antialias: 1
+urxvt*borderLess: true
+urxvt*loginShell: true
+urxvt*inheritPixmap: true
+urxvt*depth: 32
+urxvt*tintColor: #373C57
+#urxvt*tintColor: #ABC865
+urxvt*foreground: #ffffff
+#urxvt*background: #000000
+urxvt*background: rgba:0000/0000/0000/dddd
+urxvt*scrollBar: false
+urxvt*saveLines: 10000
+urxvt*geometry: 80x24
+urxvt*externalBorder: 2
+urxvt*internalBorder: 0
+#urxvt*font: xft:DejaVu Sans Mono-16
+urxvt*font: xft:Droid Sans Mono Slashed-16
+!urxvt*font: -*-Dark-*
+!urxvt*color0:           #000000
+!urxvt*color1:           #ffbc00
+!urxvt*color2:           #7a8672
+!urxvt*color3:           #968a38
+!urxvt*color4:           #414171
+!urxvt*color5:           #963c59
+!urxvt*color6:           #418179
+!urxvt*color7:           #bebebe
+!urxvt*color8:           #666666
+!urxvt*color9:           #ffbc00
+!urxvt*color10:          #c5f779
+!urxvt*color11:          #fff796
+!urxvt*color12:          #4186be
+!urxvt*color13:          #cf9ebe
+!urxvt*color14:          #71bebe
+!urxvt*color15:          #ffffff
+
+Xft.antialias: true
+
+
+urxvt*perl-ext: default,matcher
+urxvt*urlLauncher: /usr/bin/xdg-open
+urxvt*matcher.Button: 1
