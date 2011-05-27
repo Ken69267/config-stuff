@@ -64,6 +64,10 @@ map <F5> <C-w><C-w>
 abbr fr0 for (int i=0; i<; ++i) {<CR><CR>}<esc>2k15l
 abbr #i #include
 abbr def__ def __init__(self):
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
 
 " C
 autocmd BufRead *.c set nowrap 
