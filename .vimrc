@@ -71,6 +71,7 @@ inoremap ( ()<esc>i
 inoremap [ []<esc>i
 inoremap ' ''<esc>i
 inoremap " ""<esc>i
+inoremap { {<CR><CR>}<esc>ki<tab>
 
 " C
 autocmd BufRead *.c set nowrap 
@@ -125,3 +126,16 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+
+" ActionScript Fun!
+autocmd BufRead,BufNewFile *.as set ft=actionscript
+autocmd BufRead,BufNewFile *.as set ai
+autocmd BufRead,BufNewFile *.as set ts=4
+autocmd BufRead,BufNewFile *.as set shiftwidth=4
+autocmd BufRead,BufNewFile *.as set textwidth=80
+autocmd BufRead,BufNewFile *.as set expandtab
+autocmd BufRead,BufNewFile *.as set sw=4
+autocmd BufRead,BufNewFile *.as set sts=4
+
+autocmd FileType actionscript set omnifunc=actionscriptcomplete#CompleteAS
+autocmd FileType actionscript :set dictionary=$HOME/.vim/dict/actionscript.dict
