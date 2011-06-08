@@ -13,6 +13,7 @@ autocmd BufNewFile *.java 0r ~/.vim/templates/foo.java
 autocmd BufNewFile *.c 0r ~/.vim/templates/foo.c
 autocmd BufNewFile *.cpp 0r ~/.vim/templates/foo.cpp
 autocmd BufNewFile *.h 0r ~/.vim/templates/foo.h
+autocmd BufNewFile *.as 0r ~/.vim/templates/foo.as
 
 " C guidelines
 set ai
