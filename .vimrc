@@ -15,6 +15,8 @@ autocmd BufNewFile *.cpp 0r ~/.vim/templates/foo.cpp
 autocmd BufNewFile *.h 0r ~/.vim/templates/foo.h
 autocmd BufNewFile *.as 0r ~/.vim/templates/foo.as
 
+nnoremap <F2> <ESC>:%s/foo/\=expand("%:r")<cr>
+
 " C guidelines
 set ai
 set ts=4
@@ -110,8 +112,8 @@ command FM :exec "!eclipse -nosplash -application org.eclipse.jdt.core.JavaCodeF
 " eclim
 let g:EclimBrowser='chromium'
 "let g:EclimLogLevel=6
-nnoremap <F2> <ESC>:JavaDocSearch<cr>
-nnoremap <F11> <ESC>:Ant<cr>
+"nnoremap <F2> <ESC>:JavaDocSearch<cr>
+"nnoremap <F11> <ESC>:Ant<cr>
 nnoremap <F3> <ESC>:JavaImportMissing<cr>:JavaImportClean<cr>
 map <C-]> :Texplore<cr>
 
