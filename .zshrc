@@ -1,6 +1,7 @@
 # teh profile
 source /etc/zsh/zprofile
 # for echangelog
+export ECHANGELOG_USER="Kenneth Prugh <ken69267@gentoo.org>"
 export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
 # Completion and Prompt

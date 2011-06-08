@@ -71,7 +71,7 @@ inoremap ( ()<esc>i
 inoremap [ []<esc>i
 inoremap ' ''<esc>i
 inoremap " ""<esc>i
-inoremap { {<CR><CR>}<esc>ki<tab>
+inoremap { {<CR>}<esc>O<tab>
 
 " C
 autocmd BufRead *.c set nowrap 
@@ -136,6 +136,3 @@ autocmd BufRead,BufNewFile *.as set textwidth=80
 autocmd BufRead,BufNewFile *.as set expandtab
 autocmd BufRead,BufNewFile *.as set sw=4
 autocmd BufRead,BufNewFile *.as set sts=4
-
-autocmd FileType actionscript set omnifunc=actionscriptcomplete#CompleteAS
-autocmd FileType actionscript :set dictionary=$HOME/.vim/dict/actionscript.dict
