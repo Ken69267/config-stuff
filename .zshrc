@@ -30,6 +30,7 @@ fi
 # Aliases
 alias grep='egrep -n --color=auto'
 alias ls='ls -F --color=auto -tr'
+alias mxmlc='~/flash/bin/mxmlc'
 
 # History
 HISTSIZE=10000

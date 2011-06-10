@@ -1,12 +1,60 @@
-"set nocompatible
+set nocompatible
 set bg=dark
 
 let g:zenburn_high_Contrast = 1
 colorscheme zenburn
 
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+filetype indent on
+
+"shouldn't be needed anymore
+set t_Co=256
+
+" ctags as
+set ofu=syntaxcomplete#Complete
+
+" Tab completion options
+" (only complete to the longest unambiguous match, and show a menu)
+set completeopt=longest,menu
+set wildmode=list:longest,list:full
+set complete=.,t,i
+
+set directory=~/.vim/tmp
+set autoread
+set cursorline
+set incsearch
+set hlsearch
+
+" remappings
+nnoremap <F2> <ESC>:%s/foo/\=expand("%:r")<cr>
+map <C-]> :Texplore<cr>
+
+nnoremap <F3> <ESC>:JavaImportMissing<cr>:JavaImportClean<cr>
+
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+"split on f4 to header file and switch between them
+map <F4> :vs %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+map <F5> <C-w><C-w>
+
+abbr fr0 for (int i=0; i<; ++i) {<CR><CR>}<esc>2k15l
+abbr #i #include
+abbr def__ def __init__(self):
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+
+"ctag epicness
+set tags=./tags;$HOME
+set tags+=$HOME/.vim/tags/cpp
+set tags+=$HOME/.vim/tags/sfml
+set tags+=$HOME/.vim/tags/flpk
+
+" Autoloading templates
 autocmd BufNewFile *.py 0r ~/.vim/templates/py.py
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
 autocmd BufNewFile *.tex 0r ~/.vim/templates/mla
 autocmd BufNewFile build.xml 0r ~/.vim/templates/build.xml
 autocmd BufNewFile *.java 0r ~/.vim/templates/foo.java
@@ -14,8 +62,6 @@ autocmd BufNewFile *.c 0r ~/.vim/templates/foo.c
 autocmd BufNewFile *.cpp 0r ~/.vim/templates/foo.cpp
 autocmd BufNewFile *.h 0r ~/.vim/templates/foo.h
 autocmd BufNewFile *.as 0r ~/.vim/templates/foo.as
-
-nnoremap <F2> <ESC>:%s/foo/\=expand("%:r")<cr>
 
 " C guidelines
 set ai
@@ -29,19 +75,6 @@ set nowrap
 "set sw=4 
 "set sts=4 
 
-"ctag epicness
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-set tags=./tags;$HOME
-" cpp tags
-set tags+=$HOME/.vim/tags/cpp
-set tags+=$HOME/.vim/tags/sfml
-
-filetype plugin on
-set grepprg=grep\ -nH\ $*
-filetype indent on
-
-"shouldn't be needed anymore
-set t_Co=256
 
 if expand("%:t") =~ "^bzr_log*"
     set textwidth=70
@@ -63,18 +96,10 @@ if expand("%:e") == "java"
 	set sts=4 
 endif
 
-"split on f4 to header file
-map <F4> :vs %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-map <F5> <C-w><C-w>
 
-abbr fr0 for (int i=0; i<; ++i) {<CR><CR>}<esc>2k15l
-abbr #i #include
-abbr def__ def __init__(self):
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap { {<CR>}<esc>O<tab>
+if expand("%:e") != "ebuild"
+	inoremap { {<CR>}<esc>O<tab>
+endif
 
 " C
 autocmd BufRead *.c set nowrap 
@@ -103,7 +128,6 @@ autocmd BufNewFile *.py set expandtab
 autocmd BufNewFile *.py set sw=4 
 autocmd BufNewFile *.py set sts=4 
 " end python
-set hlsearch
 
 command JC :exec ":!javac %:p"
 command FM :exec "!eclipse -nosplash -application org.eclipse.jdt.core.JavaCodeFormatter -config  ~/java-gnome/mainline/.settings/org.eclipse.jdt.core.prefs %:p"
@@ -112,10 +136,6 @@ command FM :exec "!eclipse -nosplash -application org.eclipse.jdt.core.JavaCodeF
 " eclim
 let g:EclimBrowser='chromium'
 "let g:EclimLogLevel=6
-"nnoremap <F2> <ESC>:JavaDocSearch<cr>
-"nnoremap <F11> <ESC>:Ant<cr>
-nnoremap <F3> <ESC>:JavaImportMissing<cr>:JavaImportClean<cr>
-map <C-]> :Texplore<cr>
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 1
@@ -127,8 +147,8 @@ let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+""au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+""set completeopt=menuone,menu,longest,preview
 
 " ActionScript Fun!
 autocmd BufRead,BufNewFile *.as set ft=actionscript
@@ -139,3 +159,4 @@ autocmd BufRead,BufNewFile *.as set textwidth=80
 autocmd BufRead,BufNewFile *.as set expandtab
 autocmd BufRead,BufNewFile *.as set sw=4
 autocmd BufRead,BufNewFile *.as set sts=4
+
