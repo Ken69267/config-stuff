@@ -24,11 +24,9 @@ then
 			album=$(tag "$mp3" "TALB")
 			trackn=$(tag "$mp3" "TRCK")
 			year=$(tag "$mp3" "TYER")
-			#dur=$(tag "$mp3" "TLEN")
-			s=$(wc -c "$mp3" | awk '{print $1}')
-			dur=$(expr $s / 126 / 126)
+			dur=$(midentify "$mp3" | grep ID_LEN | cut -d "=" -f 2-)
 			echo "Syncing File $mp3"
-			mtp-sendtr -q -t "$title" -a "$artist" -l "$album" -n "$trackn" "$mp3" "$mp3"
+			mtp-sendtr -q -t "$title" -a "$artist" -l "$album" -n "$trackn" -d "$dur" "$mp3" "$mp3"
 		fi
 	done
 	echo "Sync complete"
