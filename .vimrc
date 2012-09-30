@@ -128,6 +128,21 @@ autocmd BufNewFile *.py set expandtab
 autocmd BufNewFile *.py set sw=4 
 autocmd BufNewFile *.py set sts=4 
 " end python
+"
+" SML
+
+autocmd BufRead *.sml set nowrap 
+autocmd BufRead *.sml set ts=2
+autocmd BufRead *.sml set expandtab
+autocmd BufRead *.sml set sw=2 
+autocmd BufRead *.sml set sts=2
+
+autocmd BufNewFile *.sml set nowrap 
+autocmd BufNewFile *.sml set ts=2
+autocmd BufNewFile *.sml set expandtab
+autocmd BufNewFile *.sml set sw=2 
+autocmd BufNewFile *.sml set sts=2
+" end SML
 
 command JC :exec ":!javac %:p"
 command FM :exec "!eclipse -nosplash -application org.eclipse.jdt.core.JavaCodeFormatter -config  ~/java-gnome/mainline/.settings/org.eclipse.jdt.core.prefs %:p"
