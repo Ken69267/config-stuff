@@ -115,6 +115,11 @@ elog() {
 	vi /usr/portage/$1/ChangeLog
 }
 
+meta()
+{
+	less /usr/portage/$1/metadata.xml
+}
+
 #colors
 #export TERM='rxvt-unicode256'
 export XMODIFIER=@im=SCIM
